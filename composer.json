@@ -1,0 +1,15 @@
+{
+    "name": "gsdev/wordpress",
+    "description": "Little package to wrap wordpress functions for use with a different frontend",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gavin Staniforth",
+            "email": "nospam@gsdev.me"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+
+    }
+}
