@@ -8,7 +8,6 @@ Also means Wordpress isn't exposed to bots/hackers/public. It can sit behind a h
 ## Todo
 1. Support Search
 2. Attachments?
-3. CMS Pages? (non-posts)
 4. Related Posts
 5. Tags?
 6. Comments? .. perhaps better off with Disqus
