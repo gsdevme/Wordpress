@@ -2,7 +2,7 @@
 
 namespace Gsdev\Wordpress\Data\Models;
 
-class Page extends Post
+class Page extends Entity
 {
 
 }

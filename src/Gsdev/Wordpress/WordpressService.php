@@ -3,8 +3,8 @@
 namespace Gsdev\Wordpress;
 
 use Gsdev\Wordpress\Data\Options;
-use Gsdev\Wordpress\Data\PostFactory;
 use Gsdev\Wordpress\Data\PageFactory;
+use Gsdev\Wordpress\Data\PostFactory;
 use Gsdev\Wordpress\Data\Values;
 
 /**
@@ -32,7 +32,7 @@ class WordpressService
      */
     public function getPosts($offset = 0, $limit = 5, $order = Values::ORDER_DESC, $status = Values::STATUS_PUBLISH)
     {
-        return PostFactory::createPostArrayServant(Wordpress::getPosts([
+        return PostFactory::createArrayServant(Wordpress::getPosts([
             Options::OFFSET   => $offset,
             Options::LIMIT    => $limit,
             Options::ORDER    => $order,
@@ -51,7 +51,7 @@ class WordpressService
      */
     public function getPages($offset = 0, $limit = 5, $order = Values::ORDER_DESC, $status = Values::STATUS_PUBLISH)
     {
-        return PageFactory::createPostArrayServant(Wordpress::getPosts([
+        return PageFactory::createArrayServant(Wordpress::getPosts([
             Options::OFFSET   => $offset,
             Options::LIMIT    => $limit,
             Options::ORDER    => $order,
@@ -65,29 +65,29 @@ class WordpressService
      * @param $name
      * @return Data\Models\Post|null
      */
-    public function getPageByName($name)
+    public function getPostByName($name)
     {
         $page = Wordpress::getByName($name, Wordpress::NAME_TYPE_PAGE);
 
-        if($page === null){
+        if ($page === null) {
             return null;
         }
 
-        return PostFactory::createPost($page, $this->timezone);
+        return PostFactory::create($page, $this->timezone);
     }
 
     /**
      * @param $name
      * @return Data\Models\Post|null
      */
-    public function getPostByName($name)
+    public function getPageByName($name)
     {
         $post = Wordpress::getByName($name, Wordpress::NAME_TYPE_POST);
 
-        if($post === null){
+        if ($post === null) {
             return null;
         }
 
-        return PageFactory::createPost($post, $this->timezone);
+        return PageFactory::create($post, $this->timezone);
     }
 }

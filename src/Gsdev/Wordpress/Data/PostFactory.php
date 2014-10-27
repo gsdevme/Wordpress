@@ -3,54 +3,20 @@
 namespace Gsdev\Wordpress\Data;
 
 use Gsdev\Wordpress\Data\Models\Post;
-use WP_Post;
 
-/**
- * Class PostFactory
- * @package Gsdev\Wordpress\Data
- */
-class PostFactory
+class PostFactory extends EntityFactory
 {
 
     /**
-     * @param WP_Post $post
+     * @param \WP_Post $entity
      * @param \DateTimeZone $timezone
      * @return Post
      */
-    public static function createPost(WP_Post $post, \DateTimeZone $timezone)
+    public static function create(\WP_Post $entity, \DateTimeZone $timezone)
     {
-        return new Post(
-            $timezone,
-            $post->ID,
-            $post->post_author,
-            $post->post_date,
-            $post->post_content,
-            $post->post_title,
-            $post->post_excerpt,
-            $post->post_name,
-            $post->post_modified,
-            $post->guid,
-            $post->comment_count
-        );
-    }
+        $page = parent::create($entity, $timezone);
 
-    /**
-     * @param array $posts
-     * @param \DateTimeZone $timezone
-     * @return array|null
-     */
-    public static function createPostArrayServant(array $posts, \DateTimeZone $timezone)
-    {
-        if (empty($posts)) {
-            return null;
-        }
-
-        $return = [];
-
-        foreach ($posts as $post) {
-            array_push($return, self::createPost($post, $timezone));
-        }
-
-        return $return;
+        $class = new \ReflectionClass('\Gsdev\Wordpress\Data\Models\Post');
+        return $class->newInstanceArgs($page);
     }
 }
