@@ -25,7 +25,7 @@ class Wordpress
      */
     public static function getOption($option)
     {
-        return call_user_func_array('get_option', [$option]);
+        return get_option($option);
     }
 
     /**
@@ -37,6 +37,6 @@ class Wordpress
      */
     public static function getByName($name, $type = self::NAME_TYPE_PAGE)
     {
-        return call_user_func_array('get_page_by_path', [$name, 'OBJECT', $type]);
+        return get_page_by_path($name, 'OBJECT', $type);
     }
 }
