@@ -10,7 +10,7 @@ abstract class Entity implements \JsonSerializable
 {
 
     public $id;
-    public $author;
+    public $authorId;
     public $date;
     public $content;
     public $title;
@@ -20,10 +20,10 @@ abstract class Entity implements \JsonSerializable
     public $guid;
     public $comments;
 
-    public function __construct(\DateTimeZone $timezone, $id, $author, $date, $content, $title, $excerpt, $name, $modified, $guid, $comments)
+    public function __construct(\DateTimeZone $timezone, $id, $authorId, $date, $content, $title, $excerpt, $name, $modified, $guid, $comments)
     {
         $this->id       = (int)$id;
-        $this->author   = $author;
+        $this->authorId = (int)$authorId;
         $this->date     = new \DateTime($date, $timezone);
         $this->content  = $content;
         $this->title    = $title;
