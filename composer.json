@@ -8,8 +8,10 @@
             "email": "nospam@gsdev.me"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
 
+    },
+    "autoload": {
+        "psr-0": { "Gsdev\\Wordpress\\": "src/" }
     }
 }
