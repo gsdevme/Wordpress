@@ -1,5 +1,8 @@
 # Wordpress Wrapper
 
+## Why?
+Well Writing a blog is easy.. but all the backend editor is a pain.. after all the Wordpress backend isn't all bad, however the frontend is like a cancer.. theming and extend it is just a waste of time. So I can write my posts/pages with Wordpress then export to JSON via command line using this wrapper and then write the frontend like a normal human being.
+
 ## Todo
 1. Support Search
 2. Attachments?
