@@ -1,5 +1,5 @@
 {
-    "name": "gsdev/wordpress",
+    "name": "gsdev/wordpress-wrapper",
     "description": "Little package to wrap wordpress functions for use with a different frontend",
     "license": "MIT",
     "authors": [
