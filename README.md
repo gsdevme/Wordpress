@@ -4,6 +4,7 @@
 Well Writing a blog is easy.. but all the backend editor is a pain.. after all the Wordpress backend isn't all bad, however the frontend is like a cancer.. theming and extending it is just a waste of time. So I can write my posts/pages with Wordpress then export to JSON on the HDD via command line using this wrapper and then write the frontend like a normal human being.
 
 Also means Wordpress isn't exposed to bots/hackers/public. It can sit behind a http auth user/pass
+Also useful for wrapping Wordpress in a REST API
 
 ## Todo
 1. Support Search
