@@ -61,8 +61,33 @@ class WordpressService
         ]), $this->timezone);
     }
 
+    /**
+     * @param $name
+     * @return Data\Models\Post|null
+     */
     public function getPageByName($name)
     {
+        $page = Wordpress::getByName($name, Wordpress::NAME_TYPE_PAGE);
 
+        if($page === null){
+            return null;
+        }
+
+        return PostFactory::createPost($page, $this->timezone);
+    }
+
+    /**
+     * @param $name
+     * @return Data\Models\Post|null
+     */
+    public function getPostByName($name)
+    {
+        $post = Wordpress::getByName($name, Wordpress::NAME_TYPE_POST);
+
+        if($post === null){
+            return null;
+        }
+
+        return PageFactory::createPost($post, $this->timezone);
     }
 }
